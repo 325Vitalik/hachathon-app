@@ -1,13 +1,68 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+		"Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+		sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+		monospace;
+}
+
+.myMap {
+	width: 50vw;
+	height: 100vh;
+}
+
+.fire {
+	border: 5px solid #f44336;
+	background-color: white;
+	color: "#3f51b5";
+	padding-top: 10px;
+	padding-right: 5px;
+	padding-bottom: 10px;
+	padding-left: 6px;
+}
+
+.flod {
+	border: 5px solid #36d1f4;
+	background-color: white;
+	color: "#3f51b5";
+	padding-top: 10px;
+	padding-right: 5px;
+	padding-bottom: 10px;
+	padding-left: 6px;
+}
+
+.looting {
+	border: 5px solid #13483f;
+	background-color: white;
+	color: "#3f51b5";
+	padding-top: 10px;
+	padding-right: 5px;
+	padding-bottom: 10px;
+	padding-left: 6px;
+}
+
+.murder {
+	border: 5px solid #ee877f;
+	background-color: white;
+	color: "#3f51b5";
+	padding-top: 10px;
+	padding-right: 5px;
+	padding-bottom: 10px;
+	padding-left: 6px;
+}
+
+.accident {
+	border: 5px solid #ebf436;
+	background-color: white;
+	color: "#3f51b5";
+	padding-top: 10px;
+	padding-right: 5px;
+	padding-bottom: 10px;
+	padding-left: 6px;
 }
