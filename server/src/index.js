@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from 'cors';
-import { port } from './configs/config';
+import { config } from './configs/config';
 import { combineRoutes } from './routes';
 import { errorHandler } from './middlewares/errorHandling.middleware';
 const app = express();
@@ -13,6 +13,6 @@ combineRoutes(app);
 
 app.use(errorHandler);
 
-app.listen(port, () => {
-	console.log(`Example app listening at http://localhost:${port}`);
+app.listen(config.port, () => {
+	console.log(`Example app listening at http://localhost:${config.port}`);
 });
