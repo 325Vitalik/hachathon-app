@@ -1,3 +1,5 @@
+import { navigate } from '@reach/router';
+
 export const ADD_EVENTS = 'ADD_EVENTS';
 
 export function addEvent({ name = '', locationCoordinates = null, type = '', description = '' }) {
@@ -28,6 +30,8 @@ export function addEvent({ name = '', locationCoordinates = null, type = '', des
         }).then((response) => {
             if (!response.ok) {
                 console.error(response);
+            } else {
+                navigate('/');
             }
         });
     };
