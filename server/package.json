@@ -8,16 +8,19 @@
     "build": "babel src --out-dir build",
     "hot-server": "nodemon --exec babel-node src/index.js",
     "rebuild": "npm run build && node build/index.js",
-    "fix-style": "eslint src --fix && prettier --write src/**/*"
+    "fix-style": "eslint src --fix && prettier --write src/**/*",
+    "start": "node build/index.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "core-js": "^3.9.1",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "mongodb": "^3.6.5"
+    "mongodb": "^3.6.5",
+    "regenerator-runtime": "^0.13.7"
   },
   "devDependencies": {
     "@babel/cli": "^7.12.16",
