@@ -64,7 +64,7 @@ const createQuery = (query) => {
     let dt1 = new Date(query.createdAt[0]);
     dt1.setHours(0);
 
-    let dt2 = new Date(query.createdAt[0]);
+    let dt2 = new Date(query.createdAt[1]);
     dt2.setHours(23);
 
     queryObj3 = {
