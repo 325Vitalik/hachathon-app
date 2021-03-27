@@ -5,7 +5,7 @@ export const ADD_EVENTS = 'ADD_EVENTS';
 
 export function addEvent({ name = '', locationCoordinates = null, type = '', description = '' }) {
     return (dispatch) => {
-        const url = new URL(`${config.}/api/event`);
+        const url = new URL(`${config.hostname}/api/event`);
 
         if (!locationCoordinates) {
             return;
@@ -40,7 +40,7 @@ export function addEvent({ name = '', locationCoordinates = null, type = '', des
 
 export function getEventsFromDb() {
     return (dispatch) => {
-        const url = new URL('http://localhost:5000/api/events');
+        const url = new URL(`${config.hostname}/api/events`);
 
         fetch(url).then(async (response) => {
             if (response.ok) {
@@ -57,7 +57,7 @@ export function getEventsFromDb() {
 
 export function getEventsFromDbWithFilter(query) {
     return (dispatch) => {
-        const url = new URL('http://localhost:5000/api/filtered');
+        const url = new URL(`${config.hostname}/api/filtered`);
 
         fetch(url, {
             method: 'post',
