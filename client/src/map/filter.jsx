@@ -15,11 +15,17 @@ class Filter extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {
-            startDate: new Date(),
+            startDate: this.getPreviousDay(),
             endDate: new Date(),
             name: '',
             type: '',
         };
+    }
+
+    getPreviousDay = () => {
+        const date = new Date();
+
+        return date.setDate(date.getDate() - 1);
     }
 
     onSubmit = () => {
