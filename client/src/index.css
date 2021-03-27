@@ -63,3 +63,43 @@ code {
 .description {
 	color: #000000;
 }
+
+.google-autocomplete {
+  display: flex !important;
+  flex-direction: column !important;
+  margin: 0 0.1rem !important;
+  margin-bottom: 15px !important;
+}
+
+.google-autocomplete-label{
+  font-size: .92857143em !important;
+  font-weight: 700 !important;
+  transform: none !important;
+  text-align: left !important;
+}
+
+.add-event {
+  height: 100vh;
+}
+
+.background-img {
+  background-image: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.maCX9NJU-wLjojmqKkf_ZwHaEO%26pid%3DApi&f=1);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+}
+
+.ui.form .field > label {
+  text-align: left;
+}
+
+.overlay {
+    position: absolute;
+    background-color: rgba(194, 194, 194, 0.9);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    padding: 0;
+}
