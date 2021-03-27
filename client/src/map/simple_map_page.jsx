@@ -13,9 +13,27 @@ export default class SimpleMapPage extends Component {
 		zoom: 9,
 		greatPlaceCoords: { lat: 59.724465, lng: 30.080121 },
 		placeCoordinate: [
-			{ lat: 59.955413, lng: 40.337844, text: "Fire", type: "fire" },
-			{ lat: 56.955413, lng: 10.337844, text: "Flod", type: "flod" },
-			{ lat: 18.955413, lng: 10.337844, text: "Fire", type: "fire" },
+			{
+				lat: 59.955413,
+				lng: 40.337844,
+				text: "Car",
+				type: "accident",
+				description: "nothing",
+			},
+			{
+				lat: 56.955413,
+				lng: 10.337844,
+				text: "Flood",
+				type: "flood",
+				description: "wood",
+			},
+			{
+				lat: 18.955413,
+				lng: 10.337844,
+				text: "Fire",
+				type: "fire",
+				description: "House with 10people",
+			},
 		],
 	};
 
@@ -40,6 +58,7 @@ export default class SimpleMapPage extends Component {
 							lng={item.lng}
 							text={item.text}
 							type={item.type} /* Kreyser Avrora */
+							description={item.description}
 							key={i}
 						/>
 					))}

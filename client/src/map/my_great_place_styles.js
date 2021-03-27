@@ -13,7 +13,7 @@ const greatPlaceStyle = {
 	// backgroundColor: "white",
 	borderRadius: K_SIZE,
 	textAlign: "center",
-	fontSize: 10,
+	fontSize: 9,
 	fontWeight: "bold",
 	cursor: "pointer",
 };
