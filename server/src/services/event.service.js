@@ -61,11 +61,17 @@ const createQuery = (query) => {
   let queryObj3;
 
   if (query.createdAt && query.createdAt.length > 0) {
+    let dt1 = new Date(query.createdAt[0]);
+    dt1.setHours(0);
+
+    let dt2 = new Date(query.createdAt[0]);
+    dt2.setHours(23);
+
     queryObj3 = {
       $match: {
         createdAt: {
-          $gte: new Date(query.createdAt[0]),
-          $lt: new Date(query.createdAt[1]),
+          $gte: dt1,
+          $lt: dt2,
         },
       },
     };

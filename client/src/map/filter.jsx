@@ -7,6 +7,7 @@ import 'react-date-range/dist/styles.css'; // main style file
 import 'react-date-range/dist/theme/default.css'; // theme css file
 
 import { DateRangePicker } from 'react-date-range';
+import { getEventsFromDbWithFilter } from '../AddEventPage/eventActions';
 
 class Filter extends PureComponent{
     constructor(props){
@@ -14,10 +15,18 @@ class Filter extends PureComponent{
         this.state={
             startDate : new Date(),
             endDate : new Date(),
-            searchValue:''
+            name: '',
+            type: '',
         }
     }
 
+    onSubmit = () => {
+        this.props.getEventsFromDbWithFilter({
+            name: this.state.name,
+            type: this.state.type,
+            createdAt: [this.state.startDate, this.state.endDate],
+        });
+    }
 
     changeField = (keyword) => (e, {value}) => {
         this.setState({
@@ -71,8 +80,8 @@ class Filter extends PureComponent{
                         key: 'selection',
                       }]}
                     onChange={this.changeFieldDate()}
-                DateRangePicker/>
-                <Button onClick={()=>this.props} type='submit'>Submit</Button>
+                />
+                <Button onClick={this.onSubmit} type='submit'>Submit</Button>
             </Form>
             <Item>
                 <Item.Content>
@@ -87,6 +96,7 @@ class Filter extends PureComponent{
 function mapDispatchToProps(dispatch) {
 	return bindActionCreators(
 		{
+            getEventsFromDbWithFilter,
 		},
 		dispatch,
 	);
@@ -94,6 +104,7 @@ function mapDispatchToProps(dispatch) {
 
 function mapStateToProps(state) {
 	return {
+        events: state.events.eventsData
 	};
 }
 
