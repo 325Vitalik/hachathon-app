@@ -43,6 +43,7 @@ class SimpleMapPage extends Component {
 								type={item.type}
 								description={item.description}
 								key={item._id}
+								createdAt={item.createdAt}
 							/>
 						))}
 					</GoogleMap>

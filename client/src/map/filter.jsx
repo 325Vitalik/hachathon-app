@@ -60,6 +60,7 @@ class Filter extends PureComponent{
                         control={Select}
                         label="Тип події:"
                         options={[
+                            { key: '', text: '', value: '' },
                             { key: 'fire', text: 'Пожежа', value: 'fire' },
                             { key: 'flod', text: 'Паводок', value: 'flod' },
                             {
