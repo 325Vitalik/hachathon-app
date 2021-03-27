@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Popup } from 'semantic-ui-react';
+import { Divider, Popup } from 'semantic-ui-react';
 import { greatPlaceStyle } from './my_great_place_styles.js';
 
 export default class MyGreatPlace extends Component {
@@ -37,8 +37,10 @@ export default class MyGreatPlace extends Component {
             >
                 <Popup.Header className="descriptionTittle">{this.props.name}</Popup.Header>
                 <Popup.Content>
-                    <div className="description">{this.props.description}</div>
+                    <div className="description">Опис: {this.props.description}</div>
+					<Divider/>
 					<div>Тип пригоди: {this.getType(this.props.type)}</div>
+					<Divider/>
                     <div>Додано: {this.getDate(this.props.createdAt)}</div>
                 </Popup.Content>
             </Popup>
