@@ -2,46 +2,26 @@
  * Base Google Map example
  */
 import React, { Component } from "react";
-import shouldPureComponentUpdate from "react-pure-render/function";
 
 import GoogleMap from "google-map-react";
 import MyGreatPlace from "./my_great_place.jsx";
 import { config } from "../config.js";
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
+import { getEventsFromDb } from '../AddEventPage/eventActions';
 
-export default class SimpleMapPage extends Component {
+class SimpleMapPage extends Component {
 	static defaultProps = {
-		center: [59.938043, 30.337157],
-		zoom: 9,
-		greatPlaceCoords: { lat: 59.724465, lng: 30.080121 },
-		placeCoordinate: [
-			{
-				lat: 59.955413,
-				lng: 40.337844,
-				text: "Car",
-				type: "accident",
-				description: "nothing",
-			},
-			{
-				lat: 56.955413,
-				lng: 10.337844,
-				text: "Flood",
-				type: "flood",
-				description: "wood",
-			},
-			{
-				lat: 18.955413,
-				lng: 10.337844,
-				text: "Fire",
-				type: "fire",
-				description: "House with 10people",
-			},
-		],
+		center: [49.065783, 33.410033],
+		zoom: 13,
 	};
-
-	shouldComponentUpdate = shouldPureComponentUpdate;
 
 	constructor(props) {
 		super(props);
+	}
+
+	componentDidMount() {
+		this.props.getEventsFromDb();
 	}
 
 	render() {
@@ -52,14 +32,14 @@ export default class SimpleMapPage extends Component {
 					center={this.props.center}
 					zoom={this.props.zoom}
 				>
-					{this.props.placeCoordinate.map((item, i) => (
+					{this.props.events.map((item, i) => (
 						<MyGreatPlace
-							lat={item.lat}
-							lng={item.lng}
-							text={item.text}
-							type={item.type} /* Kreyser Avrora */
+							lat={item.location.coordinates[1]}
+							lng={item.location.coordinates[0]}
+							name={item.name}
+							type={item.type}
 							description={item.description}
-							key={i}
+							key={item._id}
 						/>
 					))}
 				</GoogleMap>
@@ -67,3 +47,20 @@ export default class SimpleMapPage extends Component {
 		);
 	}
 }
+
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators(
+        {
+            getEventsFromDb,
+        },
+        dispatch
+    );
+}
+
+function mapStateToProps(state) {
+    return {
+		events: state.events.eventsData
+	};
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SimpleMapPage);

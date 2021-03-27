@@ -1,8 +1,8 @@
 import {combineReducers} from "redux";
-import exampleReducer from "../ExampleComponent/exampleReducer";
+import events from '../AddEventPage/eventReducer';
 
 const rootReducer=combineReducers({
-    exampleReducer
+    events
 })
 
 export default rootReducer;

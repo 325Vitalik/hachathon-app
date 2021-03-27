@@ -21,37 +21,47 @@ code {
 	border: 5px solid #f44336;
 	background-color: white;
 	color: #000000;
-	padding-top: 10px;
+	padding-top: 9px;
 	padding-right: 5px;
 	padding-bottom: 10px;
 	padding-left: 6px;
 }
 
-.flood {
+.flod {
 	border: 5px solid #0198ba;
 	background-color: white;
 	color: #000000;
-	padding-top: 10px;
+	padding-top: 9px;
 	padding-right: 10px;
 	padding-bottom: 10px;
-	padding-left: 4px;
+	padding-left: 9px;
 }
 
 .murder {
 	border: 5px solid #ff9100;
 	background-color: white;
 	color: #000000;
-	padding-top: 10px;
+	padding-top: 9px;
 	padding-right: 5px;
 	padding-bottom: 10px;
 	padding-left: 1px;
+}
+
+.looting {
+	border: 5px solid #1a6413;
+	background-color: white;
+	color: #000000;
+	padding-top: 9px;
+	padding-right: 5px;
+	padding-bottom: 10px;
+	padding-left: 4px;
 }
 
 .accident {
 	border: 5px solid #ebf436;
 	background-color: white;
 	color: #000000;
-	padding-top: 10px;
+	padding-top: 9px;
 	padding-right: 5px;
 	padding-bottom: 10px;
 	padding-left: 6px;

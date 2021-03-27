@@ -1,10 +1,10 @@
-export const ADD_EVENT = 'ADD_EVENT';
+export const ADD_EVENTS = 'ADD_EVENTS';
 
 export function addEvent({ name = '', locationCoordinates = null, type = '', description = '' }) {
     return (dispatch) => {
         const url = new URL('http://localhost:5000/api/event');
 
-        if(!locationCoordinates) {
+        if (!locationCoordinates) {
             return;
         }
 
@@ -28,6 +28,47 @@ export function addEvent({ name = '', locationCoordinates = null, type = '', des
         }).then((response) => {
             if (!response.ok) {
                 console.error(response);
+            }
+        });
+    };
+}
+
+export function getEventsFromDb() {
+    return (dispatch) => {
+        const url = new URL('http://localhost:5000/api/events');
+
+        fetch(url).then(async (response) => {
+            if (response.ok) {
+                dispatch({
+                    type: ADD_EVENTS,
+                    events: await response.json(),
+                });
+            } else {
+                console.warn(response);
+            }
+        });
+    };
+}
+
+export function getEventsFromDbWithFilter(query) {
+    return (dispatch) => {
+        const url = new URL('http://localhost:5000/api/filtered');
+
+        fetch(url, {
+            method: 'post',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(query),
+        }).then(async (response) => {
+            if (response.ok) {
+                dispatch({
+                    type: ADD_EVENTS,
+                    events: await response.json(),
+                });
+            } else {
+                console.warn(response);
             }
         });
     };

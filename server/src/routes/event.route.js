@@ -4,6 +4,12 @@ import { eventService } from '../services/event.service';
 
 const router = new Router();
 
+router.get('/events', async (req,res,next) => {
+    const result = await eventService.getPoints();
+    
+    res.send(result);
+})
+
 router.get('/:uid', async (req, res, next) => {
 
     const response = await eventService.getPoint(req.params.uid);
@@ -11,11 +17,6 @@ router.get('/:uid', async (req, res, next) => {
     res.send(response);
 });
 
-router.get('/', async (req,res,next) => {
-    const result = await eventService.getPoints();
-    
-    res.send(result);
-})
 
 router.post('/filtered', async (req,res,next) => {
     const query = req.body; 

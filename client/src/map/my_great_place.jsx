@@ -11,11 +11,11 @@ export default class MyGreatPlace extends Component {
 			<Popup
 				trigger={
 					<div className={this.props.type} style={greatPlaceStyle}>
-						{this.props.text}
+						{this.props.type}
 					</div>
 				}
 			>
-				<Popup.Header className="descriptionTittle">SOS</Popup.Header>
+				<Popup.Header className="descriptionTittle">{this.props.name}</Popup.Header>
 				<Popup.Content>
 					<div className="description">{this.props.description}</div>
 				</Popup.Content>

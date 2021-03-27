@@ -4,7 +4,7 @@ const greatPlaceStyle = {
 	// initially any map object has left top corner at lat lng coordinates
 	// it's on you to set object origin to 0,0 coordinates
 	position: "absolute",
-	width: 40,
+	width: 60,
 	height: 40,
 	left: 40 / 2,
 	top: -40 / 2,
