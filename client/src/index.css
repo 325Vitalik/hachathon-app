@@ -20,49 +20,46 @@ code {
 .fire {
 	border: 5px solid #f44336;
 	background-color: white;
-	color: "#3f51b5";
+	color: #000000;
 	padding-top: 10px;
 	padding-right: 5px;
 	padding-bottom: 10px;
 	padding-left: 6px;
 }
 
-.flod {
-	border: 5px solid #36d1f4;
+.flood {
+	border: 5px solid #0198ba;
 	background-color: white;
-	color: "#3f51b5";
+	color: #000000;
 	padding-top: 10px;
-	padding-right: 5px;
+	padding-right: 10px;
 	padding-bottom: 10px;
-	padding-left: 6px;
-}
-
-.looting {
-	border: 5px solid #13483f;
-	background-color: white;
-	color: "#3f51b5";
-	padding-top: 10px;
-	padding-right: 5px;
-	padding-bottom: 10px;
-	padding-left: 6px;
+	padding-left: 4px;
 }
 
 .murder {
-	border: 5px solid #ee877f;
+	border: 5px solid #ff9100;
 	background-color: white;
-	color: "#3f51b5";
+	color: #000000;
 	padding-top: 10px;
 	padding-right: 5px;
 	padding-bottom: 10px;
-	padding-left: 6px;
+	padding-left: 1px;
 }
 
 .accident {
 	border: 5px solid #ebf436;
 	background-color: white;
-	color: "#3f51b5";
+	color: #000000;
 	padding-top: 10px;
 	padding-right: 5px;
 	padding-bottom: 10px;
 	padding-left: 6px;
+}
+
+.descriptionTittle {
+	color: #fa223f;
+}
+.description {
+	color: #000000;
 }
