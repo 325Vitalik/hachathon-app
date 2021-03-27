@@ -1,10 +1,11 @@
 import { navigate } from '@reach/router';
+import { config } from '../config';
 
 export const ADD_EVENTS = 'ADD_EVENTS';
 
 export function addEvent({ name = '', locationCoordinates = null, type = '', description = '' }) {
     return (dispatch) => {
-        const url = new URL('http://localhost:5000/api/event');
+        const url = new URL(`${config.}/api/event`);
 
         if (!locationCoordinates) {
             return;
