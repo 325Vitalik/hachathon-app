@@ -22,9 +22,9 @@ class AddEventComponent extends PureComponent {
         this.props.addEvent(this.state);
     };
 
-    changeField = (keyword) => (e) => {
+    changeField = (keyword) => (e, {value}) => {
         this.setState({
-            [keyword]: e.target.value,
+            [keyword]: value,
         });
     };
 

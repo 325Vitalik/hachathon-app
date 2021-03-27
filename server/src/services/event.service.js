@@ -29,7 +29,8 @@ const getPoint = async (id) => {
 const addPoint = async (point) => {
     let points = await dbService.getPointCollection();
 
-    let res = await points.insert(point);
+    const createdAt = new Date();
+    let res = await points.insertOne({ ...point, createdAt });
     
     return res.ops[0];
 }

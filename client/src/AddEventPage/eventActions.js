@@ -4,7 +4,7 @@ export function addEvent({ name = '', locationCoordinates = null, type = '', des
     return (dispatch) => {
         const url = new URL('http://localhost:5000/api/event');
 
-        if(locationCoordinates) {
+        if(!locationCoordinates) {
             return;
         }
 
