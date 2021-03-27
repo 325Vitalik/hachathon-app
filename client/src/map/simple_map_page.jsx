@@ -10,6 +10,8 @@ import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import { getEventsFromDb } from '../AddEventPage/eventActions';
 
+import Filter from './filter.jsx'
+
 class SimpleMapPage extends Component {
 	static defaultProps = {
 		center: [49.065783, 33.410033],
@@ -26,23 +28,26 @@ class SimpleMapPage extends Component {
 
 	render() {
 		return (
-			<div className="myMap">
-				<GoogleMap
-					bootstrapURLKeys={{ key: config.apiKey }}
-					center={this.props.center}
-					zoom={this.props.zoom}
-				>
-					{this.props.events.map((item, i) => (
-						<MyGreatPlace
-							lat={item.location.coordinates[1]}
-							lng={item.location.coordinates[0]}
-							name={item.name}
-							type={item.type}
-							description={item.description}
-							key={item._id}
-						/>
-					))}
-				</GoogleMap>
+			<div className="filter-map-wrapper">
+				<div className="myMap">
+					<GoogleMap
+						bootstrapURLKeys={{ key: config.apiKey }}
+						center={this.props.center}
+						zoom={this.props.zoom}
+					>
+						{this.props.events.map((item, i) => (
+							<MyGreatPlace
+								lat={item.location.coordinates[1]}
+								lng={item.location.coordinates[0]}
+								name={item.name}
+								type={item.type}
+								description={item.description}
+								key={item._id}
+							/>
+						))}
+					</GoogleMap>
+				</div>
+				<Filter/>
 			</div>
 		);
 	}
